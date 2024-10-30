@@ -1,0 +1,31 @@
+training:
+  dataset: 'mp'
+  property: 'shear modulus'
+  epoch: 1000
+  learning_rate: 0.0006
+  batch_size: 64
+  weight_decay: 1e-05
+  split_seed: 123
+  fold: 0
+  write_predictions: True
+  model_name: 'standard test'
+
+model:
+  head_v: 1
+  head_e: 1
+  layer_number: 2
+  inner_layer: 5
+  hidden_dim: 64
+  criterion: 'mse'
+  optimizer: 'adam'
+  scheduler: 'onecycle'
+  inner_dropout: 0.2
+  dropout: 0
+
+features:
+  cutoff: 8
+  max_neighbors: 12
+  use_triangle_potential: True
+  atom_feature_size: 92
+  edge_feature_size: 376
+  triangle_feature_size: 216
